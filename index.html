@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiziTalk - Edukasi Gizi untuk Generasi Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #ccfbf1 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .btn-primary { background: linear-gradient(135deg, #10b981 0%, #059669 100%); transition: transform 0.3s; }
+        .btn-primary:hover { transform: scale(1.05); }
+        /* Perbaikan area klik menu mobile agar lebih mudah diakses */
+        #mobileMenu a { min-height: 48px; display: flex; align-items: center; }
+        /* Grid responsif untuk card dan gambar agar tidak overflow di mobile */
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+        @media (max-width: 640px) {
+            .grid.md\:grid-cols-3, .grid.md\:grid-cols-2, .grid.md\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
+            }
+            .h-64, .h-48 { height: 180px !important; }
+            .p-8 { padding: 1.25rem !important; }
+        }
+    </style>
+    <script src="main.js"></script>
+</head>
+<body class="font-sans">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <h1 class="text-2xl font-bold text-green-600">🥗 GiziTalk</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-green-600">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600">Tentang</a>
+                    <a href="#services" class="text-gray-700 hover:text-green-600">Layanan</a>
+                    <a href="#articles" class="text-gray-700 hover:text-green-600">Artikel</a>
+                    <a href="#resources" class="text-gray-700 hover:text-green-600">Sumber Belajar</a>
+                    <a href="#desain" class="text-gray-700 hover:text-green-600">Inspirasi</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600">Kontak</a>
+                </div>
+                <button id="menuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <a href="#home" class="block px-4 py-2 hover:bg-green-50">Home</a>
+            <a href="#about" class="block px-4 py-2 hover:bg-green-50">Tentang</a>
+            <a href="#services" class="block px-4 py-2 hover:bg-green-50">Layanan</a>
+            <a href="#articles" class="block px-4 py-2 hover:bg-green-50">Artikel</a>
+            <a href="#resources" class="block px-4 py-2 hover:bg-green-50">Sumber Belajar</a>
+            <a href="#desain" class="block px-4 py-2 hover:bg-green-50">Inspirasi</a>
+            <a href="#contact" class="block px-4 py-2 hover:bg-green-50">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="pt-24 pb-16 hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        Platform Edukasi Gizi Modern
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 leading-tight">
+                        Edukasi Gizi, Bangun Pola Makan Seimbang untuk Generasi Digital
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Platform interaktif yang membantu kamu memahami gizi melalui edukasi, konseling, dan teknologi digital.
+                    </p>
+                    <a href="#services" class="btn-primary text-white px-8 py-4 rounded-full font-semibold inline-block">
+                        Mulai Belajar →
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                        <div class="text-4xl mb-3">🥗</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Gizi Seimbang</h3>
+                        <p class="text-sm text-gray-600">Pola makan sehat untuk kehidupan lebih baik</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 card-hover mt-8">
+                        <div class="text-4xl mb-3">💪</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Gaya Hidup</h3>
+                        <p class="text-sm text-gray-600">Tips hidup lebih aktif dan bugar</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                        <div class="text-4xl mb-3">📚</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Edukasi Digital</h3>
+                        <p class="text-sm text-gray-600">Materi lengkap mudah dipahami</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg p-6 card-hover mt-8">
+                        <div class="text-4xl mb-3">🎯</div>
+                        <h3 class="font-bold text-gray-800 mb-2">Challenge</h3>
+                        <p class="text-sm text-gray-600">Tantangan hidup lebih sehat</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Tentang Kami</h2>
+                <div class="w-24 h-1 bg-green-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg text-center">
+                        <div class="w-32 h-32 bg-green-100 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
+                            <img src="https://imgs.search.brave.com/makpcWkyXQJmoVFSEWJxUXd-kMER35CMuSkNa48Kmas/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8w/Ni8xMi8xNi8wOC9h/aS1nZW5lcmF0ZWQt/ODA1ODg3N182NDAu/anBn" alt="Foto Sulthan Yustr Suwardhi" class="object-cover w-full h-full" onerror="this.style.display='none';this.parentNode.innerHTML='<span class=\'text-6xl\'>👩‍🎓</span>';">
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Sulthan Yustr Suwardhi</h3>
+                        <p class="text-gray-600 mb-4">Mahasiswa TI UDINUS</p>
+                        <p class="text-sm text-gray-500">Founder & Nutrition Educator</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6">Visi & Misi</h3>
+                    <div class="bg-green-50 rounded-2xl p-6 mb-6">
+                        <h4 class="font-bold text-green-700 mb-3">👁️ Visi</h4>
+                        <p class="text-gray-700">Meningkatkan literasi gizi di kalangan mahasiswa dan masyarakat muda melalui pendekatan edukatif dan interaktif.</p>
+                    </div>
+                    <div class="bg-teal-50 rounded-2xl p-6">
+                        <h4 class="font-bold text-teal-700 mb-3">✨ Keunggulan</h4>
+                        <p class="text-gray-700">Edukasi Gizi dengan menggabungkan ilmu gizi dan gaya hidup modern (digital health).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-gradient-to-br from-green-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Layanan & Program Utama</h2>
+                <p class="text-xl text-gray-600">Materi lengkap untuk memahami gizi dan pola hidup sehat</p>
+                <div class="w-24 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="services/pengertian-ilmu-gizi.html" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">📖</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pengertian Ilmu Gizi</h3>
+                    <p class="text-gray-600">Memahami dasar-dasar ilmu gizi dan pentingnya nutrisi untuk tubuh</p>
+                </a>
+                <a href="services/pendidikan-gizi.html" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pendidikan Gizi</h3>
+                    <p class="text-gray-600">Program edukasi sistematis untuk meningkatkan pemahaman gizi</p>
+                </a>
+                <a href="#" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Gizi Seimbang</h3>
+                    <p class="text-gray-600">Panduan lengkap mencapai keseimbangan nutrisi harian</p>
+                </a>
+                <a href="#" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">🍽️</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Pola Makan Seimbang</h3>
+                    <p class="text-gray-600">Strategi praktis menerapkan pola makan sehat sehari-hari</p>
+                </a>
+                <a href="#" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">💪</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Gaya Hidup Sehat</h3>
+                    <p class="text-gray-600">Panduan holistik untuk hidup lebih sehat dan bugar</p>
+                </a>
+                <a href="#" class="bg-white rounded-2xl shadow-lg p-8 card-hover block hover:ring-2 hover:ring-green-400 transition">
+                    <div class="text-4xl mb-4">🥗</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Menu Resep Sehat</h3>
+                    <p class="text-gray-600">Koleksi resep bergizi dan lezat untuk setiap hari</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section id="articles" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Artikel Edukatif</h2>
+                <p class="text-xl text-gray-600">Tips dan informasi gizi untuk kehidupan sehari-hari</p>
+                <div class="w-24 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="articles/ide-sarapan-sehat.html" class="md:col-span-2 bg-gradient-to-r from-green-50 to-teal-50 rounded-3xl overflow-hidden shadow-xl card-hover block">
+                    <div class="grid md:grid-cols-2">
+                        <div class="bg-green-200 h-64 md:h-auto flex items-center justify-center">
+                            <span class="text-9xl">🥣</span>
+                        </div>
+                        <div class="p-8 flex flex-col justify-center">
+                            <div class="inline-block bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mb-4 w-max">
+                                Featured Article
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Ide Sarapan Sehat untuk Mahasiswa Super Sibuk</h3>
+                            <p class="text-gray-600 mb-6">Temukan resep sarapan praktis yang bisa disiapkan dalam 10 menit! Dari oatmeal sehat hingga telur dengan sayuran rebus yang penuh nutrisi.</p>
+                            <span class="bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 w-max cursor-pointer">Baca Selengkapnya</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="articles/meal-prep.html" class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover block">
+                    <div class="bg-teal-100 h-48 flex items-center justify-center">
+                        <span class="text-7xl">🍳</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-green-600 font-semibold mb-2">TIPS GIZI</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Cara Mudah Meal Prep untuk Seminggu</h3>
+                        <p class="text-gray-600 mb-4">Hemat waktu dan tetap sehat dengan strategi meal prep yang efektif.</p>
+                        <span class="text-green-600 font-semibold cursor-pointer">Baca Artikel →</span>
+                    </div>
+                </a>
+                <a href="#" class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover block">
+                    <div class="bg-green-100 h-48 flex items-center justify-center">
+                        <span class="text-7xl">💧</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-green-600 font-semibold mb-2">HIDRASI</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Pentingnya Hidrasi untuk Produktivitas</h3>
+                        <p class="text-gray-600 mb-4">Pelajari bagaimana air putih mempengaruhi konsentrasi dan performa akademik.</p>
+                        <span class="text-green-600 font-semibold cursor-pointer">Baca Artikel →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sumber Belajar & Unduhan -->
+    <section id="resources" class="py-20 bg-gradient-to-br from-green-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Sumber Belajar & Unduhan</h2>
+                <p class="text-xl text-gray-600">E-book, modul gizi, jurnal populer, dan video edukasi gratis untuk kamu!</p>
+                <div class="w-24 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center card-hover">
+                    <div class="text-4xl mb-4">📘</div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">E-book Gizi</h3>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Download</a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center card-hover">
+                    <div class="text-4xl mb-4">📄</div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Modul Gizi</h3>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Download</a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center card-hover">
+                    <div class="text-4xl mb-4">📰</div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Jurnal Populer</h3>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Download</a>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-center card-hover">
+                    <div class="text-4xl mb-4">🎬</div>
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Video Edukasi</h3>
+                    <a href="#" class="text-green-600 font-semibold hover:underline">Tonton</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desain: Foto Sarapan Sehat -->
+    <section id="desain" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Inspirasi Sarapan Sehat</h2>
+                <p class="text-xl text-gray-600">Lihat contoh sarapan sehat: oatmeal, telur rebus, dan sayuran segar</p>
+                <div class="w-24 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Oatmeal Sarapan Sehat" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Oatmeal & Buah Segar</h3>
+                        <p class="text-gray-600">Kaya serat, praktis, dan mengenyangkan.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+                    <img src="https://imgs.search.brave.com/y2Byx5qmZ-IRW15F8yCYnvP9p91sEuJwdO2dn33gvcQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS9waG90b3MvMTI4/Mzg4L3BleGVscy1w/aG90by0xMjgzODgu/anBlZz9hdXRvPWNv/bXByZXNzJmNzPXRp/bnlzcmdiJmRwcj0x/Jnc9NTAw" alt="Telur Rebus & Sayuran" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Telur Rebus & Sayuran</h3>
+                        <p class="text-gray-600">Protein tinggi, cocok untuk energi pagi.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col items-center">
+                    <img src="https://imgs.search.brave.com/wCEt1N9QGYGF-ILQ3anSpYKYfp0vluXfB9OBjkxjMwU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWct/Z2xvYmFsLmNwY2Ru/LmNvbS9yZWNpcGVz/Lzc4MWQzM2Y0OTVj/YzgwMDYvMzAweDIy/MGNxODAvc2FuZHdp/Y2gtd2FucGFrdS1m/b3RvLXJlc2VwLXV0/YW1hLmpwZw" alt="Sandwich Sehat" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-lg text-gray-800 mb-2">Sandwich Gandum & Sayur</h3>
+                        <p class="text-gray-600">Praktis dibawa ke kampus, tetap sehat!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Hubungi Kami</h2>
+                <p class="text-xl text-gray-600">Mari terhubung dan mulai perjalanan hidup sehatmu!</p>
+                <div class="w-24 h-1 bg-green-500 mx-auto mt-4"></div>
+            </div>
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 rounded-3xl p-8 text-center">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-8">Follow Kami di Social Media</h3>
+                    <div class="flex justify-center gap-6">
+                        <a href="https://instagram.com/yustrrrrr_" target="_blank" class="bg-pink-500 text-white p-6 rounded-2xl hover:bg-pink-600 transition card-hover">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                            <p class="mt-3 font-semibold">@yustrrrrr</p>
+                        </a>
+                        <a href="https://tiktok.com/@yustrrrrr" target="_blank" class="bg-gray-800 text-white p-6 rounded-2xl hover:bg-gray-900 transition card-hover">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            </svg>
+                            <p class="mt-3 font-semibold">@yustrrrrr</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-lg font-semibold mb-2">🥗 GiziTalk</p>
+            <p class="text-gray-400">Edukasi Gizi untuk Generasi Digital Yang Cerdas</p>
+            <p class="text-gray-500 mt-4 text-sm">&copy; 2025 GiziTalk. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
